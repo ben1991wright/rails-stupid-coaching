@@ -1,0 +1,16 @@
+<div class="user-question text-box">
+  <h2 class="name">You:</h2><h2 class="message"> <%= @question %></h2>
+</div>
+<div class="coach-answer text-box">
+  <h2 class="name">Your coach:</h2><h2 class="message"> <% if @question == 'I am going to work' %>
+                    <%= "Great!" %>
+                  <% elsif @question[-1] == '?' %>
+                    <%= "Silly question, get dressed and go to work!" %>
+                  <% else %>
+                    <%= "I don\'t care, get dressed and go to work!" %>
+                  <% end %>
+  </h2>
+</div>
+<div class="btn-container">
+  <%= link_to "Ask a new question", ask_path, class: 'btn' %>
+</div>
